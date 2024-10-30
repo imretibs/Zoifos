@@ -1,0 +1,331 @@
+html{
+    scroll-behavior: smooth;
+}
+@keyframes pop-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+@keyframes slide {
+    0% { margin-left: 0; }                  /* Show first image */
+    24.5% { margin-left: 0; }               /* Pause on first image */
+    29.5% { margin-left: -100%; }           /* Slide to second image */
+    54% { margin-left: -100%; }             /* Pause on second image */
+    59% { margin-left: -200%; }             /* Slide to third image */
+    83.5% { margin-left: -200%; }           /* Pause on third image */
+    88.5% { margin-left: -300%; }           /* Slide to fourth image */
+    100% { margin-left: -300%; }            /* Pause on fourth image */
+}
+
+
+
+.scroll-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: pop-up 0.6s ease-out forwards;
+}
+
+
+.scroll-transition:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.scroll-transition:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.scroll-transition:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2a2a2a;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../images/8.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #000000;
+    overflow: hidden;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    height: 80px;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+nav ul li {
+    display: inline;
+    margin: 0 5px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    line-height: 60px;
+    position: relative;
+    margin: 0 10px;
+}
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    left: 0;
+    bottom: 6px;
+    border-radius: 40px;
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: right;
+}
+nav ul li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+nav ul li a.active{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transition: color 0.1s ease, background-color 0.1s ease;
+}
+nav ul li img.logo {
+    height: 50px; 
+    vertical-align: middle; 
+    margin: 0 20px;
+} 
+.omy{
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.card-cont{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100%;
+}
+.card1{
+    width: 325px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3s);
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    justify-content: space-between;
+    height: 100%;
+}
+.card1 img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+.card1:hover{
+    transform: translateY(-20px);
+}
+.card-content{
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card-content h2{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+.card-content p{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.cardbutt-container {
+    display: flex;
+    justify-content: center; 
+    padding: 20px;
+}
+.cardbutt{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+.cardbutt:hover{
+    background-color: gray;
+    color: white;
+}
+.cont2{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.cont2 h1{
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+}
+.cont2 h1::after{
+    content: "";
+    position: relative;
+    width: 100%;
+    align-items: center;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+}
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+}
+footer img {
+    height: 80px;
+    padding: 0 0 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    justify-content: left;
+    text-align: left;
+    color: white;
+    margin-left: 15px;
+}
+.text p{
+    margin: 0;
+    padding: 0;
+}
+.a1 {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+.a1:hover {
+    text-decoration: underline; 
+}
+.copy {
+    margin-left: auto; 
+    text-align: right;
+    font-family: Arial, sans-serif;
+    padding-right: 20px;
+}
+.slider {
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    width: 400%; /* 100% for each image (3 images = 300%) */
+    animation: slide 1s infinite; /* Animation to slide through images */
+}
+
+.images div {
+    width: 100%; /* Each image container takes 100% width */
+}
+
+.images img {
+    display: flex;
+    height: 400px;
+    width: 100%; /* Each image fills its container */
+    object-fit: cover; /* Ensure images are not distorted */
+    animation: slide 6s infinite;
+}
+
+input[type="radio"] {
+    display: none; /* Hide radio buttons */
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.dots label {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dots label:hover {
+    background-color: #aaa;
+}
+
+/* Keyframe animation for auto-sliding */
+
+
+/* Manual radio control (for user override) */
+#img1:checked ~ .images {
+    animation: none;
+    margin-left: 0;
+}
+#img2:checked ~ .images {
+    animation: none;
+    margin-left: -100%;
+}
+#img3:checked ~ .images {
+    animation: none;
+    margin-left: -200%;
+}
+#img4:checked ~ .images {
+    animation: none;
+    margin-left: -300%;
+}
+.top {
+    position: absolute;  
+    width: 50px;
+    height: 50px;
+    background: white;
+    bottom: 20px;       
+    right: 20px;        
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    font-size: 22px;
+    display: inline-block;
+}
+.top:hover{
+    background-color: black;
+    color: white;
+}
